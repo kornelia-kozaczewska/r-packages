@@ -40,13 +40,6 @@ testCahoy <- function(data, B = 500, alpha = 0.05, seed = NULL) {
     boot_n <- lapply(data, sample, replace = TRUE)
     
     s2_boot <- sapply(boot_n, var)
-
-    zero_ids <- which(s2_boot == 0)
-    if (length(zero_ids) > 0) {
-    eps <- .Machine$double.eps
-    s2_boot[zero_ids] <- eps
-    }
-    
     geom_mean_s2 <- prod(s2_boot)^(1/Kplus1)
     eta_hat_boot <- log(s2_boot / geom_mean_s2)
     
