@@ -1,7 +1,7 @@
 # Example usage of testCahoy and a small simulation comparing its
 # type I error with Bartlett's test under non-normal data.
 
-source("testCahoy.R")
+source("R/testCahoy.R")
 
 # --- Basic usage -----------------------------------------------------------
 

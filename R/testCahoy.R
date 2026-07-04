@@ -1,23 +1,33 @@
-# testCahoy: bootstrap test for homogeneity of variances in K+1 groups
-
-# Cahoy, D. O. (2010). A bootstrap test for equality of variances.
-# Computational Statistics & Data Analysis, 54(10), 2306–2316.
-# https://doi.org/10.1016/j.csda.2010.04.012
-
-# Arguments:
-# data - a list of vectors (each vector contains the observations for one group)
-# B - number of bootstrap iterations (default is 500)
-# alpha - significance level of the test (default is 0.05)
-# seed - optional random number generator seed (default is NULL)
-
-# Returns: a list with the following elements
-# t_vec - vector of observed test statistics t_i
-# c_star - critical value c* determined by the bootstrap
-# reject - TRUE/FALSE: whether to reject H0 (if any |t_i| > c_star)
-# alpha - returned α
-# B - returned B
-
-
+#' Bootstrap test for equality of variances
+#'
+#' Bootstrap test for homogeneity of variances in K+1 groups, following
+#' Cahoy (2010). A resampling-based alternative to Bartlett's and Levene's
+#' tests, robust under non-normality and small samples.
+#'
+#' @param data A list of numeric vectors, one vector of observations per group.
+#' @param B Number of bootstrap iterations. Default 500.
+#' @param alpha Significance level of the test. Default 0.05.
+#' @param seed Optional random number generator seed. Default `NULL`.
+#'
+#' @return A list with the following elements:
+#' \describe{
+#'   \item{t_vec}{vector of observed test statistics t_i}
+#'   \item{c_star}{critical value c* determined by the bootstrap}
+#'   \item{reject}{`TRUE`/`FALSE`: whether to reject H0 (if any |t_i| > c*)}
+#'   \item{alpha}{significance level used}
+#'   \item{B}{number of bootstrap iterations used}
+#' }
+#'
+#' @references Cahoy, D. O. (2010). A bootstrap test for equality of variances.
+#' \emph{Computational Statistics & Data Analysis}, 54(10), 2306-2316.
+#' \doi{10.1016/j.csda.2010.04.012}
+#'
+#' @examples
+#' groups <- list(rnorm(30), rnorm(30), rnorm(30, sd = 3))
+#' testCahoy(groups, B = 200, seed = 42)
+#'
+#' @importFrom stats var
+#' @export
 testCahoy <- function(data, B = 500, alpha = 0.05, seed = NULL) {
   if (!is.null(seed)) set.seed(seed)
   

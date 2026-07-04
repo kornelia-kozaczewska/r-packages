@@ -1,0 +1,19 @@
+Package: testCahoy
+Title: Bootstrap Test for Equality of Variances
+Version: 0.1.0
+Authors@R:
+    person("Kornelia", "Kozaczewska", email = "lacinakornelia@gmail.com",
+           role = c("aut", "cre"))
+Description: Implementation of the bootstrap test for equality of variances
+    proposed by Cahoy (2010) <doi:10.1016/j.csda.2010.04.012>, a
+    resampling-based alternative to Bartlett's and Levene's tests, robust
+    under non-normality and small samples.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+URL: https://github.com/kornelia-kozaczewska/r-packages
+BugReports: https://github.com/kornelia-kozaczewska/r-packages/issues
+Config/roxygen2/version: 8.0.0
