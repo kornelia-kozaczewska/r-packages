@@ -1,6 +1,6 @@
 # testCahoy
 
-An R package implementing the **bootstrap test for equality of variances** proposed by Cahoy (2010).
+An independent educational R implementation of the **bootstrap test for equality of variances** proposed by Cahoy (2010).
 
 Unlike classical tests such as Bartlett’s or Levene’s, this method uses **bootstrap resampling**,  
 making it more robust for non-normal data and small sample sizes.  
@@ -43,6 +43,12 @@ while the bootstrap test stays close to the nominal level.
 Reference:  
 Cahoy, D. O. (2010). *A bootstrap test for equality of variances.*  
 Computational Statistics & Data Analysis, 54(10), 2306–2316. [DOI](https://doi.org/10.1016/j.csda.2010.04.012)
+
+## Related work
+
+Dexter Cahoy maintains the original CRAN package [`testequavar`](https://CRAN.R-project.org/package=testequavar), which implements bootstrap tests for equality of 2, 3, or 4 population variances.
+
+This repository is an independent educational implementation of the method described in Cahoy (2010). It is not affiliated with, endorsed by, or maintained by Dexter Cahoy.
 
 ## Package structure
 
